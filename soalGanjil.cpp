@@ -2,12 +2,16 @@
 #include <string>
 using namespace std;
 
+class dosen;
+class staff;
+class univ;
+
 class mahasiswa{
     public:
         string nama, nim;
 
     private:
-        int nilai;
+        float nilai;
 
     friend class dosen;
 };
@@ -15,25 +19,41 @@ class mahasiswa{
 class dosen{
     public:
         string nama, NDIN;
+        void beriNilai(mahasiswa* m, float nilai){
+            m->nilai = nilai;
+        };
 
     private:
-        string pangkat, gaji;
+        string pangkat;
+        float gaji;
 
     friend class staff;
-    friend void univ::gajiDosen(dosen &d);
+    friend float lihatGajiDosen(dosen* d);
+
 };
 
 class staff{
     public:
-        string nama, idStaff;
+        string nama;
+        int idStaff;
+        void ubahPangkat(dosen* d, string pangkat) {
+            d->pangkat = pangkat;
+        }
     private:
-        string gaji;
+        float gaji;
+
+    friend float lihatGajiStaff(staff* s);
 };
 
-class univ{
+class Universitas {
     public:
-        void gajiDosen(dosen &d);
-};
+        float lihatGajiDosen(dosen* d);
+    };
 
-int main(){;
+    float lihatGajiDosen(dosen* d) {
+        return d->gaji;
+    }
+
+    float lihatGajiStaff(staff* s) {
+        return s->gaji;
 }
