@@ -7,3 +7,7 @@ class mahasiswa{
         string nama, nim;
         int nilai;
 };
+
+int main(){
+    
+}
