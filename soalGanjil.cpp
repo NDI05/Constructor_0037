@@ -15,6 +15,8 @@ class dosen{
         string nama, NDIN;
     private:
         string pangkat, gaji;
+
+    friend class staff;
 };
 
 int main(){
