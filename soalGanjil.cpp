@@ -10,6 +10,9 @@ class mahasiswa{
     friend class dosen;
 };
 
+class dosen{
+
+};
 int main(){
     
 }
