@@ -7,6 +7,7 @@ class mahasiswa{
         string nama, nim;
     private:
         int nilai;
+    friend class dosen;
 };
 
 int main(){
