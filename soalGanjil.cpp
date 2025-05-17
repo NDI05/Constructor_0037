@@ -11,8 +11,12 @@ class mahasiswa{
 };
 
 class dosen{
-
+    public:
+        string nama, NDIN;
+    private:
+        string pangkat, gaji;
 };
+
 int main(){
     
 }
