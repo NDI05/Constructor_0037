@@ -25,7 +25,7 @@ class dosen{
 
     private:
         string pangkat;
-        float gaji = 10000;
+        float gaji;
 
     friend class staff;
     friend float lihatGajiDosen(dosen* d);
@@ -36,11 +36,11 @@ class staff{
     public:
         string nama;
         int idStaff;
-        void ubahPangkat(dosen* d, string pangkatBaru) {
-            d->pangkat = pangkatBaru;
+        void ubahPangkat(dosen* d, string pangkat) {
+            d->pangkat = pangkat;
         }
     private:
-        float gaji = 5000;
+        float gaji;
 
     friend float lihatGajiStaff(staff* s);
 };
@@ -48,26 +48,12 @@ class staff{
 class Universitas {
     public:
         float lihatGajiDosen(dosen* d);
-};
+    };
 
-float lihatGajiDosen(dosen* d) {
-    return d->gaji;
-}
+    float lihatGajiDosen(dosen* d) {
+        return d->gaji;
+    }
 
-float lihatGajiStaff(staff* s) {
-    return s->gaji;
-}
-
-int main() {
-    mahasiswa mhs;
-    dosen dsn;
-    staff stf;
-
-    dsn.beriNilai(&mhs, 100);
-    stf.ubahPangkat(&dsn, "Dekan");
-
-    cout << "Gaji dosen : " << lihatGajiDosen(&dsn) << endl; 
-    cout << "Gaji staff : " << lihatGajiStaff(&stf) << endl; 
-
-    return 0;
+    float lihatGajiStaff(staff* s) {
+        return s->gaji;
 }
